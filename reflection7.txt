@@ -49,3 +49,10 @@ git init — initializes git in an existing directory
 git status — shows which files have changed since the last commit
 
 git add — adds a file to the staging area (list of files to be committed)
+
+Git commits
+===========
+
+Good practice to write commit messages as a command, for example:
+
+“Add a recipe for strawberry cheesecake”
