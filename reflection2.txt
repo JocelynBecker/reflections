@@ -1,0 +1,2 @@
+use diff -u in the command line to compare 2 files
+git is named after English slang git !!
