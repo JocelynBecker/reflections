@@ -1,4 +1,4 @@
-use diff -u in the command line to compare 2 files
+use diff --u in the command line to compare 2 files
 git is named after English slang git !!
 
 git saves manually
@@ -65,12 +65,15 @@ git diff —- staged
 
 runs the diff between files in the staging area and files in the repository (already committed)
 
-git reset —- hard
+git reset —-hard
 
 discards changes in the staging area and the working directory BE CAREFUL WITH THIS
 
 Branches
 =========
+
+BRANCH1
+
 A branch is a label for a commit
 
 master is the main branch
@@ -93,7 +96,20 @@ To switch to a different branch:
 git checkout branch1
 
 To commit changes to a branch
-git add file — to add to staging area
+git add filename — to add to staging area
 git commit — to commit changes
 
-BRANCH1
+git log --graph     — to visualize structure
+git log --graph --oneline
+
+
+git log --graph --oneline branch1 branch2 (to visualize branch1 and branch2)
+
+git checkout-b new_branch_name 
+-- both creates and switches to the new branch. It is the same as doing these two commands:
+
+git branch new_branch_name
+git checkout new_branch_name
+
+
+
