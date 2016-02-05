@@ -71,3 +71,29 @@ discards changes in the staging area and the working directory BE CAREFUL WITH T
 
 Branches
 =========
+A branch is a label for a commit
+
+master is the main branch
+
+every time you create a repository, git creates a master branch for you
+
+“detached head” message means you’re looking at a commit that is not labelled with a branch name
+
+making a new commit updates the branch you have checked out, and leaves all others alone
+
+the process of combining two commits is known a merging, for example, you added an experimental feature in the exp branch, and now want to combine it back into the master branch
+
+git branch  — (no args) shows and views branches
+
+git branch branch1 — creates a new branch with that name
+
+The star next to the branch is the one that is currently checked out, so that’s the one that will update if I make a change
+
+To switch to a different branch:
+git checkout branch1
+
+To commit changes to a branch
+git add file — to add to staging area
+git commit — to commit changes
+
+BRANCH1
