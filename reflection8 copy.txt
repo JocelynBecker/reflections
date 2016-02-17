@@ -1,4 +1,4 @@
-use diff --u in the command line to compare 2 files
+use diff -u in the command line to compare 2 files
 git is named after English slang git !!
 
 git saves manually
@@ -65,15 +65,14 @@ git diff —- staged
 
 runs the diff between files in the staging area and files in the repository (already committed)
 
-git reset —-hard
+git reset —- hard
 
 discards changes in the staging area and the working directory BE CAREFUL WITH THIS
 
 Branches
 =========
 
-MASTER 
-<<<<<<< HEAD
+MASTER but please add back all the juicy branch info!
 
 I’m at this video:
 https://www.udacity.com/course/viewer#!/c-ud775/l-2969618657/e-2960548795/m-2960548796
@@ -97,10 +96,3 @@ Since the checked-out branch is always included in the merge, you may have guess
 Also, since the two branches are merged, the order in which they are typed into the command line does not matter. The key is to remember that git merge always merges all the specified branches into the currently checked out branch, creating a new commit for that branch.
 
 When merging, if there are conflicts, you must fix the conflicts before merging. The question is, how do you know where the conflicts are?
-
-BRANCH1
-=======
-
-
-
-
