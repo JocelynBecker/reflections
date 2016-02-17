@@ -1,0 +1,133 @@
+use diff --u in the command line to compare 2 files
+git is named after English slang git !!
+
+git saves manually
+in git terminology, user-created checkpoints are called commits
+a repository contains a single file or a collection of files
+a commit is a snapshot of every file in your repository when the commit is submitted 
+
+to see colored output in git do this:
+git config --global color.ui auto
+
+
+clone
+log
+diff
+checkout
+
+checking out to a commit means resetting all your files to the state they were in when the commit was made
+
+git configuration info is in the instructor’s notes here:
+https://www.udacity.com/course/viewer#!/c-ud775/l-2980038599/m-3333158951
+
+Compare two commits, printing each line that is present in one commit but not the other.
+
+git diff will do this. It takes two arguments - the two commit ids to compare. 
+
+
+Make a copy of an entire Git repository, including the history, onto your own computer.
+
+git clone will do this. It takes one argument - the url of the repository to copy. 
+
+
+Temporarily reset all files in a directory to their state at the time of a specific commit.
+
+git checkout will do this. It takes one argument - the commit ID to restore. 
+
+
+Show the commits made in this repository, starting with the most recent.
+
+git log will do this. It doesn't take any arguments.
+
+Git repositories
+================
+
+git files are stored in .git directory
+
+git init — initializes git in an existing directory
+
+git status — shows which files have changed since the last commit
+
+git add — adds a file to the staging area (list of files to be committed)
+
+Git commits
+===========
+
+Good practice to write commit messages as a command, for example:
+
+“Add a recipe for strawberry cheesecake”
+
+git commit — commits the changes (from the staging the area)
+
+git diff — with no args compares files in working directory to staging area
+
+git diff —- staged
+
+runs the diff between files in the staging area and files in the repository (already committed)
+
+git reset —-hard
+
+discards changes in the staging area and the working directory BE CAREFUL WITH THIS
+
+Branches
+=========
+
+MASTER 
+
+
+I’m at this video:
+https://www.udacity.com/course/viewer#!/c-ud775/l-2969618657/e-2960548795/m-2960548796
+
+I copied all the info on branches into reflection9 (but have not committed it). 
+
+Next step: merge extra info from the branch1 branch back into this doc on the master branch.
+
+If things get messed up, I can recover the branch info from reflection9 (not in the reflections directory)
+
+After you merge the changes from branchG into branchA, then BranchA will still have all the changes it had before, plus the changes from branchG
+
+git show        shows the difference between a commit and its parent (that is, it shows the changes just for this commit)
+
+git branch -d branch name         deletes a branch, doesn’t delete the commits in the branch, only deletes the label
+
+git merge will also include the currently checked-out branch in the merged version. So if you have branch1 checked out, and you run git merge branch2 branch3, the merged version will combine branch1 as well as branch2 and branch3. That’s because the branch1 label will update after you make the merge commit, so it’s unlikely that you didn’t want the changes from branch1 included in the merge. For this reason, you should always checkout one of the two branches you’re planning on merging before doing the merge. Which one you should check out depends on which branch label you want to point to the new commit.
+
+Since the checked-out branch is always included in the merge, you may have guessed that when you are merging two branches, you don't need to specify both of them as arguments to git merge on the command line. If you want to merge branch2 into branch1, you can simply git checkout branch1 and then type git merge branch2. The only reason to type git merge branch1 branch2 is if it helps you keep better mental track of which branches you are merging.
+
+Also, since the two branches are merged, the order in which they are typed into the command line does not matter. The key is to remember that git merge always merges all the specified branches into the currently checked out branch, creating a new commit for that branch.
+
+When merging, if there are conflicts, you must fix the conflicts before merging. The question is, how do you know where the conflicts are?
+
+BRANCH1
+=======
+
+
+I’m at this video:
+https://www.udacity.com/course/viewer#!/c-ud775/l-2969618657/e-2960548795/m-2960548796
+
+I copied all the info on branches into reflection9 (but have not committed it). 
+
+Next step: merge extra info from the branch1 branch back into this doc on the master branch.
+
+If things get messed up, I can recover the branch info from reflection9 (not in the reflections directory)
+
+After you merge the changes from branchG into branchA, then BranchA will still have all the changes it had before, plus the changes from branchG
+
+git show        shows the difference between a commit and its parent (that is, it shows the changes just for this commit)
+
+git branch -d branch name         deletes a branch, doesn’t delete the commits in the branch, only deletes the label
+
+git merge will also include the currently checked-out branch in the merged version. So if you have branch1 checked out, and you run git merge branch2 branch3, the merged version will combine branch1 as well as branch2 and branch3. That’s because the branch1 label will update after you make the merge commit, so it’s unlikely that you didn’t want the changes from branch1 included in the merge. For this reason, you should always checkout one of the two branches you’re planning on merging before doing the merge. Which one you should check out depends on which branch label you want to point to the new commit.
+
+Since the checked-out branch is always included in the merge, you may have guessed that when you are merging two branches, you don't need to specify both of them as arguments to git merge on the command line. If you want to merge branch2 into branch1, you can simply git checkout branch1 and then type git merge branch2. The only reason to type git merge branch1 branch2 is if it helps you keep better mental track of which branches you are merging.
+
+Also, since the two branches are merged, the order in which they are typed into the command line does not matter. The key is to remember that git merge always merges all the specified branches into the currently checked out branch, creating a new commit for that branch.
+
+When merging, if there are conflicts, you must fix the conflicts before merging. The question is, how do you know where the conflicts are?
+
+Branch 1 -- where is my branch info?
+
+
+
+
+
