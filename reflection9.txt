@@ -125,7 +125,6 @@ Also, since the two branches are merged, the order in which they are typed into 
 
 When merging, if there are conflicts, you must fix the conflicts before merging. The question is, how do you know where the conflicts are?
 
-Branch 1 -- where is my branch info?
 
 
 
