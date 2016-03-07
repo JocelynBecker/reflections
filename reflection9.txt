@@ -127,8 +127,20 @@ When merging, if there are conflicts, you must fix the conflicts before merging.
 
 Adding last line back, for fun and happiness
 
+Finding the parent of a commit
+==============================
+After merging two branches, when you do git log, you see all the commits for all the merged branches, sorted by time.
 
+To find the changes introduced by a single commit, you need to diff it against its parent commit, which is not necessarily the one immediately before it chronologically (which could potentially have been done on a different branch)
 
+To see the diff of a commit to its parent, do:
+git show
 
+a git merge is also a git commit
 
+Deleting a branch
+=================
 
+To delete a branch:
+
+git branch -d branchname
