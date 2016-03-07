@@ -63,4 +63,6 @@ git diff — with no args compares files in working directory to staging area
 
 git diff — staged
 
+I'm a happy merged branch, or am I? -- branch 1
+
 runs the diff between files in the staging area and files in the repository (already committed)
