@@ -1,347 +1,138 @@
-Last login: Tue Mar 15 11:08:07 on ttys000
-jocelyn ~ $ ls
-AndroidSDK				batterystats.html
-AndroidStudioProjects			batterystats.txt
-Applications				cam projects
-Desktop					for-udacity
-DevPlatLogo.png				gdt-site
-Documents				git-completion.bash
-Downloads				git-prompt.sh
-ILT					git-src
-Japan					git-workspace
-Library					google-cloud-sdk
-Movies					grep
-Music					jos_on_bus.jpg
-My resume				maia css
-OtherPlaceForAndroidStudioProjects	maven-tests
-Pandemic Parties			mygradledir
-ParanoidBackup				personal
-Pictures				pixate wip
-Public					ps.txt
-Saved from Filer			purchase orders
-Training				sketchbook pics
-Training_Portal				udacity course images
-Udacity					udacity-app-engine-course
-Udacity analytics course		udacity-nano
-acl.txt					watch images
-api keys
-jocelyn ~ $ cd Udacity
-jocelyn Udacity $ ls
-DictionaryProviderExample	Revamp
-For Doc Integration		content_providers_course
-MusicDroid			github_course
-MyMusicDroid			images
-MyTranslationApp		previous
-RecyclerView
-jocelyn Udacity $ cd github_course
-jocelyn github_course $ ls
-asteroids			reflection8 copy.txt
-pappu_game			reflections
-reflection8 copy 2.txt		reflectiontomerge copy.txt
-reflection8 copy 3.txt		reflectiontomerge.txt
-jocelyn github_course $ git status
-fatal: Not a git repository (or any of the parent directories): .git
-jocelyn github_course $ cd reflections
-jocelyn (master) reflections $ git status
-On branch master
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+use diff -u in the command line to compare 2 files
+git is named after English slang git !!
 
-	.DS_Store
+git saves manually
+in git terminology, user-created checkpoints are called commits
+a repository contains a single file or a collection of files
+a commit is a snapshot of every file in your repository when the commit is submitted 
 
-nothing added to commit but untracked files present (use "git add" to track)
-jocelyn (master) reflections $ git log
-commit e50476d564731dd9f480765b5a7f2600bcac454e
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Mon Mar 7 13:07:14 2016 -0800
+to see colored output in git do this:
+git config --global color.ui auto
 
-    Added info on git show and on deleting a branch
 
-commit 9e8db9d7ef75012327c610a6c434e0dce6b8fb1d
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Mon Mar 7 12:54:16 2016 -0800
+clone
+log
+diff
+checkout
 
-    I am the master
+checking out to a commit means resetting all your files to the state they were in when the commit was made
 
-commit f4f669813710d356cea5d5fd3ebbd59520b00496
-Merge: 26ec713 8ea3c35
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Mon Mar 7 12:53:02 2016 -0800
+git configuration info is in the instructor’s notes here:
+https://www.udacity.com/course/viewer#!/c-ud775/l-2980038599/m-3333158951
 
-    Merge branch 'branch1' - to add the happy merged branch
+Compare two commits, printing each line that is present in one commit but not the other.
 
-commit 8ea3c3573269275e6f836ad899a0e1ab90aa1ec6
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Mon Mar 7 12:52:04 2016 -0800
+git diff will do this. It takes two arguments - the two commit ids to compare. 
 
-    I'm a happy merged branch, or am I?`
 
-commit 26ec71397032720aaf23ededb10492d71a6ddc01
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Mon Mar 7 12:43:16 2016 -0800
+Make a copy of an entire Git repository, including the history, onto your own computer.
 
-    Not sure where reflection8 went...
+git clone will do this. It takes one argument - the url of the repository to copy. 
 
-commit 847fac23e2b6cb78267b67678cc697d5d5c2a5d3
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Wed Feb 17 09:51:34 2016 -0800
 
-    Adding last line BACK for fun and happiness
+Temporarily reset all files in a directory to their state at the time of a specific commit.
 
-commit e9dd90728441a87838c7b9d81a8865727b3d1379
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Wed Feb 17 09:49:21 2016 -0800
+git checkout will do this. It takes one argument - the commit ID to restore. 
 
-    Removed the last line for fun and happiness
 
-commit b47ce8e54ca718b9da5f2d9bf1ccadf5bfd3572a
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Wed Feb 17 09:47:48 2016 -0800
+Show the commits made in this repository, starting with the most recent.
 
-    Reflection 9
+git log will do this. It doesn't take any arguments.
 
-commit 35ab49ce8a23baa4183d4d51a4c461bfbfdf3832
-Merge: db1bfcf 987dcfa
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Wed Feb 17 09:45:46 2016 -0800
+Git repositories
+================
 
-    Merge branch 'branch1'
+git files are stored in .git directory
 
-commit 987dcfa41a0cd01a358c8cbb2fc3d835d0878192
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Wed Feb 17 09:38:16 2016 -0800
+git init — initializes git in an existing directory
 
-    Where is my branch info?
+git status — shows which files have changed since the last commit
 
-commit db1bfcfbdc0ae5827e9e7ba06b10c702299ba40e
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Wed Feb 17 09:32:35 2016 -0800
+git add — adds a file to the staging area (list of files to be committed)
 
-    More merge madness
+Git commits
+===========
 
-commit daa58aede3c6ec38f2fbf81481157d2a28badf6b
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Wed Feb 17 09:27:48 2016 -0800
+Good practice to write commit messages as a command, for example:
 
-    changes
+“Add a recipe for strawberry cheesecake”
 
-commit e91815901cd1a83a60b39cee111a73ad12edef38
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Wed Feb 17 09:26:58 2016 -0800
+git commit — commits the changes (from the staging the area)
 
-    more testing
+git diff — with no args compares files in working directory to staging area
 
-commit 38ee302e17f9b6959036231bd6243c1768b26604
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Wed Feb 17 09:21:44 2016 -0800
+git diff — staged
 
-    Still figuring out branches
+runs the diff between files in the staging area and files in the repository (already committed)
 
-commit dfdcbd28a9f384711504a4f1baf6d5d8d04c4050
-Merge: c20bcc3 890d9ee
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Wed Feb 17 09:17:10 2016 -0800
+git reset —-hard
 
-    Merge branch 'branch1' for testing purposes and to get all the branch info into a single doc
-
-commit 890d9ee3233f1d53f550c085c3fde964a11d309f
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Wed Feb 17 09:13:02 2016 -0800
-
-    More branch info (to be merged with master)
-
-commit c20bcc3cd40f68fb0f130b9f4eda94f7b19500d4
-Merge: 78939e0 620143f
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Mon Feb 8 12:22:04 2016 -0800
-
-    Merge branch 'branch1'
-
-commit 78939e04885d4dbb45b7a3b49221d360af8649cf
-Author: Jocelyn Becker <jocelyn@google.com>
-Date:   Mon Feb 8 12:18:33 2016 -0800
-
-    Adding info on git merge
-
-commit 620143f6c77ddd7d800102a1a733f64708226929
-Author: Jocelyn Becker <jocelyn@google.com>
-jocelyn (master) reflections $ ls
-reflection2.txt	reflection4.txt	reflection6.txt	reflection9.txt
-reflection3.txt	reflection5.txt	reflection7.txt
-jocelyn (master) reflections $ git status
-On branch master
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.DS_Store
-
-nothing added to commit but untracked files present (use "git add" to track)
-jocelyn (master) reflections $ git branch
-  branch1
-* master
-jocelyn (master) reflections $ ls
-reflection2.txt	reflection4.txt	reflection6.txt	reflection9.txt
-reflection3.txt	reflection5.txt	reflection7.txt
-jocelyn (master) reflections $ vi reflection9.txt
-jocelyn (master *) reflections $ git branch
-  branch1
-* master
-jocelyn (master *) reflections $ git checkout branch1
-error: Your local changes to the following files would be overwritten by checkout:
-	reflection9.txt
-Please, commit your changes or stash them before you can switch branches.
-Aborting
-jocelyn (master *) reflections $ git add reflection9.txt
-jocelyn (master +) reflections $ git commit
-error: There was a problem with the editor 'vi'.
-Please supply the message using either -m or -F option.
-jocelyn (master +) reflections $ git checkout branch1
-error: Your local changes to the following files would be overwritten by checkout:
-	reflection9.txt
-Please, commit your changes or stash them before you can switch branches.
-Aborting
-jocelyn (master +) reflections $ git commit
-[master 67b6043] conflict ahead
- 1 file changed, 0 insertions(+), 0 deletions(-)
- rewrite reflection9.txt (100%)
-jocelyn (master) reflections $ git checkout branch1
-Switched to branch 'branch1'
-jocelyn (branch1) reflections $ vi reflection9.txt
-jocelyn (branch1) reflections $ ls
-reflection2.txt		reflection5.txt		reflection8 copy.txt
-reflection3.txt		reflection6.txt		reflection8.txt
-reflection4.txt		reflection7.txt
-jocelyn (branch1) reflections $ vi reflection10.txt
-jocelyn (branch1) reflections $ git diff
-jocelyn (branch1) reflections $ git status
-On branch branch1
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.DS_Store
-	reflection10.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-jocelyn (branch1) reflections $ git add reflection10.txt
-jocelyn (branch1 +) reflections $ git commit
-[branch1 c9c1e14] reflection10
- 1 file changed, 1 insertion(+)
- create mode 100644 reflection10.txt
-jocelyn (branch1) reflections $ git checkout master
-Switched to branch 'master'
-jocelyn (master) reflections $ ls
-reflection2.txt	reflection4.txt	reflection6.txt	reflection9.txt
-reflection3.txt	reflection5.txt	reflection7.txt
-jocelyn (master) reflections $ git merge branch1 reflection10.txt
-merge: reflection10.txt - not something we can merge
-jocelyn (master) reflections $ git merge branch1
-Merge made by the 'recursive' strategy.
- reflection10.txt | 1 +
- 1 file changed, 1 insertion(+)
- create mode 100644 reflection10.txt
-jocelyn (master) reflections $ ls
-reflection10.txt	reflection4.txt		reflection7.txt
-reflection2.txt		reflection5.txt		reflection9.txt
-reflection3.txt		reflection6.txt
-jocelyn (master) reflections $ vi reflection10.txt
-jocelyn (master *) reflections $ git add *10
-fatal: pathspec '*10' did not match any files
-jocelyn (master *) reflections $ git add *10*
-jocelyn (master +) reflections $ git commit
-[master dab1021] master conflict
- 1 file changed, 1 insertion(+), 1 deletion(-)
-jocelyn (master) reflections $ git checkout branch1
-Switched to branch 'branch1'
-jocelyn (branch1) reflections $ vi *10*
-jocelyn (branch1 *) reflections $ git add *10*
-jocelyn (branch1 +) reflections $ git commit
-[branch1 4b2899a] branch1 conflict
- 1 file changed, 1 insertion(+), 1 deletion(-)
-jocelyn (branch1) reflections $ git status
-On branch branch1
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.DS_Store
-
-nothing added to commit but untracked files present (use "git add" to track)
-jocelyn (branch1) reflections $ git checkout master
-Switched to branch 'master'
-jocelyn (master) reflections $ git merge branch1
-Auto-merging reflection10.txt
-CONFLICT (content): Merge conflict in reflection10.txt
-Automatic merge failed; fix conflicts and then commit the result.
-jocelyn (master *+|MERGING) reflections $ vi *10*
-jocelyn (master *+|MERGING) reflections $ git status
-On branch master
-You have unmerged paths.
-  (fix conflicts and run "git commit")
-
-Unmerged paths:
-  (use "git add <file>..." to mark resolution)
-
-	both modified:   reflection10.txt
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.DS_Store
-
-no changes added to commit (use "git add" and/or "git commit -a")
-jocelyn (master *+|MERGING) reflections $ vi *10*
-jocelyn (master *+|MERGING) reflections $ git status
-On branch master
-You have unmerged paths.
-  (fix conflicts and run "git commit")
-
-Unmerged paths:
-  (use "git add <file>..." to mark resolution)
-
-	both modified:   reflection10.txt
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.DS_Store
-
-no changes added to commit (use "git add" and/or "git commit -a")
-jocelyn (master *+|MERGING) reflections $ git add *10*
-jocelyn (master +|MERGING) reflections $ git merge branch1
-fatal: You have not concluded your merge (MERGE_HEAD exists).
-Please, commit your changes before you merge.
-jocelyn (master +|MERGING) reflections $ git commit
-[master fae2444] Merge branch 'branch1'
-jocelyn (master) reflections $ git status
-On branch master
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.DS_Store
-
-nothing added to commit but untracked files present (use "git add" to track)
-jocelyn (master) reflections $ git merge branch1
-Already up-to-date.
-jocelyn (master) reflections $ vi *10*
-jocelyn (master) reflections $ git checkout branch1
-Switched to branch 'branch1'
-jocelyn (branch1) reflections $ ls
-reflection10.txt	reflection4.txt		reflection7.txt
-reflection2.txt		reflection5.txt		reflection8 copy.txt
-reflection3.txt		reflection6.txt		reflection8.txt
-jocelyn (branch1) reflections $ git checkout mster
-error: pathspec 'mster' did not match any file(s) known to git.
-jocelyn (branch1) reflections $ git checkout master
-Switched to branch 'master'
-jocelyn (master) reflections $ ls
-reflection10.txt	reflection4.txt		reflection7.txt
-reflection2.txt		reflection5.txt		reflection9.txt
-reflection3.txt		reflection6.txt
-jocelyn (master) reflections $ vi reflection9.txt
-jocelyn (master) reflections $ more reflection9.txt
-"reflection9.txt" may be a binary file.  See it anyway? 
-jocelyn (master) reflections $ vi reflection9.txt
+discards changes in the staging area and the working directory BE CAREFUL WITH THIS
 
 Adding last line back, for fun and happiness
+
+Branches
+=========
+
+MASTER
+
+
+I’m at this video:
+https://www.udacity.com/course/viewer#!/c-ud775/l-2969618657/e-2960548795/m-2960548796
+
+I copied all the info on branches into reflection9 (but have not committed it).
+
+Next step: merge extra info from the branch1 branch back into this doc on the master branch.
+
+If things get messed up, I can recover the branch info from reflection9 (not in the reflections directory)
+
+After you merge the changes from branchG into branchA, then BranchA will still have all the changes it had before, plus the changes from branchG
+
+git show        shows the difference between a commit and its parent (that is, it shows the changes just for this commit)
+
+git branch -d branch name         deletes a branch, doesn’t delete the commits in the branch, only deletes the label
+
+git merge will also include the currently checked-out branch in the merged version. So if you have branch1 checked out, and you run git merge branch2 branch3, the merged version will combine branch1 as well as branch2 and branch3. That’s because the branch1 label will update after you make the merge commit, so it’s unlikely that you didn’t want the changes from branch1 included in the merge. For this reason, you should always checkout one of the two branches you’re planning on merging before doing the merge. Which one you should check out depends on which branch label you want to point to the new commit.
+
+Since the checked-out branch is always included in the merge, you may have guessed that when you are merging two branches, you don't need to specify both of them as arguments to git merge on the command line. If you want to merge branch2 into branch1, you can simply git checkout branch1 and then type git merge branch2. The only reason to type git merge branch1 branch2 is if it helps you keep better mental track of which branches you are merging.
+
+Also, since the two branches are merged, the order in which they are typed into 
+the command line does not matter. The key is to remember that git merge always m
+erges all the specified branches into the currently checked out branch, creating
+ a new commit for that branch.
+
+When merging, if there are conflicts, you must fix the conflicts before merging. The question is, how do you know where the conflicts are?
+
+BRANCH1
+=======
+
+
+I’m at this video:
+https://www.udacity.com/course/viewer#!/c-ud775/l-2969618657/e-2960548795/m-2960548796
+
+I copied all the info on branches into reflection9 (but have not committed it).
+
+Next step: merge extra info from the branch1 branch back into this doc on the master branch.
+
+If things get messed up, I can recover the branch info from reflection9 (not in the reflections directory)
+
+After you merge the changes from branchG into branchA, then BranchA will still have all the changes it had before, plus the changes from branchG
+
+git show        shows the difference between a commit and its parent (that is, it shows the changes just for this commit)
+
+git branch -d branch name         deletes a branch, doesn’t delete the commits in the branch, only deletes the label
+
+git merge will also include the currently checked-out branch in the merged version. So if you have branch1 checked out, and you run git merge branch2 branch3, the merged version will combine branch1 as well as branch2 and branch3. That’s because the branch1 label will update after you make the merge commit, so it’s unlikely that you didn’t want the changes from branch1 included in the merge. For this reason, you should always checkout one of the two branches you’re planning on merging before doing the merge. Which one you should check out depends on which branch label you want to point to the new commit.
+
+Since the checked-out branch is always included in the merge, you may have guessed that when you are merging two branches, you don't need to specify both of them as arguments to git merge on the command line. If you want to merge branch2 into branch1, you can simply git checkout branch1 and then type git merge branch2. The only reason to type git merge branch1 branch2 is if it helps you keep better mental track of which branches you are merging.
+
+Also, since the two branches are merged, the order in which they are typed into the command line does not matter. The key is to remember that git merge always merges all the specified branches into the currently checked out branch, creating a new commit for that branch.
+
+When merging, if there are conflicts, you must fix the conflicts before merging. The question is, how do you know where the conflicts are?
+
+Adding last line back, for fun and happiness
+
+
 
 Finding the parent of a commit
 ==============================
